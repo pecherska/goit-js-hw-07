@@ -35,17 +35,19 @@ function modalOpen(event) {
 
     event.preventDefault();
 
-    const instance = basicLightbox.create(`<img src="${event.target.dataset.source}"  width="800" height="600">`
-    );
+    const instance = basicLightbox.create(`<img src="${event.target.dataset.source}"  width="800" height="600">`);
     instance.show();
+  
 
+  window.addEventListener("keydown", onEscPress);
 
-    window.addEventListener("keydown", onEscPress);
+  
       function onEscPress(event) {
         if (event.code === "Escape") {
-            instance.close();
-    
+          instance.close();
+          window.removeEventListener("keydown", onEscPress);
         }
+
     }
 
 };

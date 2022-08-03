@@ -8,7 +8,7 @@ const cardsGallery = createGallery(galleryItems);
 
 galleryContainer.insertAdjacentHTML(`beforeend`, cardsGallery);
 
-const lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
+new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
 
 function createGallery(galleryItems) {
     return galleryItems
@@ -18,7 +18,6 @@ function createGallery(galleryItems) {
           <img
             class="gallery__image"
             src="${preview}"
-            data-source="${original}"
             alt="${description}"
           />
         </a>
